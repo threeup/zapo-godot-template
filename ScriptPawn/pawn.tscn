@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://662k3g5aoe8"]
+
+[ext_resource type="Script" uid="uid://38rsotr8h5p1" path="res://ScriptPawn/Pawn.gd" id="1_p2eup"]
+[ext_resource type="PackedScene" uid="uid://deqel6m5q3r88" path="res://assets/pipe.gltf" id="2_p2eup"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hq71w"]
+
+[node name="Pawn" type="RigidBody3D"]
+script = ExtResource("1_p2eup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_hq71w")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="leftarm" parent="Pivot" instance=ExtResource("2_p2eup")]
+transform = Transform3D(0.2, 0, 0, 0, -0.0495132, -0.198786, 0, 0.447268, -0.0220059, 0.3, 1, 0.25)
+
+[node name="rightarm" parent="Pivot" instance=ExtResource("2_p2eup")]
+transform = Transform3D(0.2, 0, 0, 0, -0.0495132, -0.198786, 0, 0.447268, -0.0220059, -0.3, 1, 0.25)
+
+[node name="Character2" parent="Pivot" instance=ExtResource("2_p2eup")]
+
+[node name="Characterhead2" parent="Pivot" instance=ExtResource("2_p2eup")]
+transform = Transform3D(0.399165, 0, 0, 0, 1, 0, 0, 0, 0.455836, 0, 0.697292, 0)
